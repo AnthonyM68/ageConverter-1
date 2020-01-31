@@ -2,7 +2,11 @@
 const btn = document.getElementById('button');
 const divAge = document.getElementById('age');
 const result = document.getElementById('result');
-let radios = document.forms["formA"].elements["choix"];
+
+const element = document.querySelector('form');
+element.setAttribute("id", "formA");
+
+const radios = document.forms["formA"].elements["choix"];
 let bisextile = 0;
 let age = '';
 
@@ -22,9 +26,10 @@ btn.addEventListener('click', function () {
     event.preventDefault();
     age = divAge.value;
     if (age === '') {
-        result.setAttribute("style", "red");
         result.innerHTML = "Veuillez indiquer votre âge SVP";
+        result.setAttribute("class", "alert alert-warning text-center");
     } else {
+        result.setAttribute("class", "alert alert-success text-center");
         theSwitch(radios.value);
     }
 });
