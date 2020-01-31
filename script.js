@@ -39,7 +39,7 @@ for (radio in radios) {
 }
 function bisextiles(age) {
     if (bisextile != 0) {bisextile = 0;}
-    for (let i = 0; i < age; i++) {
+    for (let i = 1; i <= age; i++) {
         if (i % 4 === 0) {
             bisextile += 1;
         } else {
